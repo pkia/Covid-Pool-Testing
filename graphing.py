@@ -1,15 +1,23 @@
-import csv
-def get_columns(csv_file):
-    csv_reader = csv.reader(csv_file, delimiter = '')
-    line_count = 0
-
-    for row in csv_reader:
-        if line_count == 0:
-            print("Column names are {}".join(row))
-    else:
-        print(f'\t{row[0]} works in the {row[1]} department, and was born in {row[2]}.')
-        line_count += 1
-    print(f'Processed {line_count} lines.')
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 
 
-get_columns()
+def graph(csv_file):
+
+    dataframe = pd.read_csv(csv_file)
+
+    x = dataframe.Date_HPSC
+    y = dataframe.Test24
+    z = dataframe.pool_test
+
+    plt.ylabel('Number Of Cases Tested')
+    plt.xlabel('Dates of Tests')
+    plt.plot(x,y,z)
+    plt.show()
+
+
+
+
+
+graph('pool_test.csv')
