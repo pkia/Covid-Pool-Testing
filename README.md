@@ -1,2 +1,2 @@
 # Covid pool testing
-Winning project for Open Data Hackathon
+Winning entry for open Data Hackathon
